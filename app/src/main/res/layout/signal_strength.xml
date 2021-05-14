@@ -1,0 +1,1144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="12dp"
+    tools:context=".PhoneStateListenerActivity">
+
+<!--    <TextView-->
+<!--        android:id="@+id/signalStrengthTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_below="@+id/textView"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:layout_alignParentStart="true" />-->
+
+
+
+    <!-- file name -->
+
+    <TextView
+        android:id="@+id/fileNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/cellRATTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/fileNameTextView"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignParentTop="true"
+        android:textStyle="normal"/>
+
+    <!-- Loop -->
+
+    <TextView
+        android:id="@+id/CountLoopTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="normal"
+        android:layout_alignParentRight="true"
+        android:layout_alignBaseline="@id/fileNameTextView"
+        />
+
+
+
+    <!-- PCI -->
+
+    <TextView
+        android:id="@+id/textViewPci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PCI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        android:layout_below="@+id/fileNameTextView"
+        android:textColor="#149106"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellPciTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/textViewPci"
+        android:textColor="#149106"
+        android:layout_alignTop="@+id/textViewPci" />
+
+
+
+    <!-- MNC -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="MNC:  "
+        android:id="@+id/textViewMNC"
+        android:layout_below="@+id/textViewPci"
+        android:layout_alignParentLeft="true" />
+
+
+    <TextView
+        android:id="@+id/cellMncTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewMNC"
+        android:layout_alignTop="@+id/textViewMNC" />
+
+    <!-- MCC -->
+
+    <TextView
+        android:id="@+id/textViewMCC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MCC:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewMNC"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellMccTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewMCC"
+        android:layout_alignTop="@+id/textViewMCC" />
+
+    <!-- Cell ID -->
+
+    <TextView
+        android:id="@+id/textViewCellID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Cell ID:  "
+        android:layout_below="@+id/textViewMCC"
+        android:textStyle="normal"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/cellIDTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewCellID"
+        android:textStyle="normal"
+        android:layout_alignTop="@+id/textViewCellID" />
+
+
+    <!-- TAC -->
+
+    <TextView
+        android:id="@+id/textViewTac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAC:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewCellID"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellTacTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewTac"
+        android:layout_alignTop="@+id/textViewTac" />
+
+    <!-- TA -->
+
+    <TextView
+        android:id="@+id/textViewTa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TA:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewTac"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellTaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewTa"
+        android:layout_alignTop="@+id/textViewTa" />
+
+    <!-- Op -->
+
+    <TextView
+        android:id="@+id/textViewOp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Operator:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewTa"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellOpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewOp"
+        android:layout_alignTop="@+id/textViewOp" />
+
+    <!-- Bw -->
+
+    <TextView
+        android:id="@+id/textViewBw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bandwidth:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewOp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellBwTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewBw"
+        android:layout_alignTop="@+id/textViewBw" />
+
+
+
+    <!-- Ear -->
+
+
+    <TextView
+        android:id="@+id/textViewEar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EARFCN:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewBw"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellEarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewEar"
+        android:layout_alignTop="@+id/textViewEar" />
+
+
+    <!-- CQI -->
+
+
+    <TextView
+        android:id="@+id/textViewCqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CQI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewEar"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellCqiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewCqi"
+        android:layout_alignTop="@+id/textViewCqi" />
+
+
+    <!-- CellDBM -->
+
+    <TextView
+        android:id="@+id/textViewDbm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CellDBM:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewCqi"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellDbmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewDbm"
+        android:layout_alignTop="@+id/textViewDbm" />
+
+
+
+    <!-- RSRP -->
+
+    <TextView
+        android:id="@+id/textViewRsrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSRP:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewDbm"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellRsrpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewRsrp"
+        android:layout_alignTop="@+id/textViewRsrp" />
+
+
+    <!-- RSRQ -->
+
+    <TextView
+        android:id="@+id/textViewRsrq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSRQ:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewRsrp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellRsrqTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewRsrq"
+        android:layout_alignTop="@+id/textViewRsrq" />
+
+    <!-- RSSI -->
+
+    <TextView
+        android:id="@+id/textViewRssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewRsrq"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellRssiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewRssi"
+        android:layout_alignTop="@+id/textViewRssi" />
+
+
+    <!-- RSSNR -->
+
+    <TextView
+        android:id="@+id/textViewRssnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSNR:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewRssi"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/cellRssnrTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewRssnr"
+        android:layout_alignTop="@+id/textViewRssnr" />
+
+    <!--ASU-->
+
+    <TextView
+        android:id="@+id/textViewAsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASU:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewRssnr"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellAsuTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewAsu"
+        android:layout_alignTop="@+id/textViewAsu"
+        />
+
+
+    <!--Level-->
+
+<!--
+    <TextView
+        android:id="@+id/textViewLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewAsu"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellLevelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textViewLevel"
+        android:layout_alignTop="@+id/textViewLevel"
+        />
+-->
+
+    <!-- Cell Status -->
+
+    <!--
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cell State:  "
+            android:layout_marginTop="1dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/textViewRssnr"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/cellStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textViewStatus"
+            android:layout_alignTop="@+id/textViewStatus" />
+    -->
+
+
+
+    <!--Neighbor -->
+
+    <!-- PCI -->
+
+    <TextView
+        android:id="@+id/textNeighViewPci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PCI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        android:textStyle="bold"
+        android:textColor="#FF3333"
+        android:layout_below="@+id/fileNameTextView"
+        />
+
+
+    <TextView
+        android:id="@+id/cellNeighPciTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF3333"
+        android:textStyle="bold"
+        android:layout_toEndOf="@+id/textNeighViewPci"
+        android:layout_alignTop="@+id/textNeighViewPci" />
+
+
+    <!-- MNC -->
+
+    <TextView
+        android:id="@+id/textNeighViewMNC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="MNC:  "
+        android:layout_toEndOf="@+id/cellBwTextView"
+        android:layout_below="@+id/textNeighViewPci"
+        />
+
+
+    <TextView
+        android:id="@+id/cellNeighMncTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewMNC"
+        android:layout_alignTop="@+id/textNeighViewMNC"
+        />
+
+    <!-- MCC -->
+
+    <TextView
+        android:id="@+id/textNeighViewMCC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MCC:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        android:layout_below="@+id/textNeighViewMNC"
+        />
+
+
+    <TextView
+        android:id="@+id/cellNeighMccTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewMCC"
+        android:layout_alignTop="@+id/textNeighViewMCC" />
+
+<!--    Cell ID-->
+
+    <TextView
+        android:id="@+id/textNeighViewCellID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Cell ID:  "
+        android:layout_below="@+id/textNeighViewMCC"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+
+    <TextView
+        android:id="@+id/cellNeighIDTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewCellID"
+        android:layout_alignTop="@+id/textNeighViewCellID"
+        />
+
+
+
+
+    <!-- TAC -->
+
+    <TextView
+        android:id="@+id/textNeighViewTac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAC:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        android:layout_below="@+id/textNeighViewCellID"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighTacTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewTac"
+        android:layout_alignTop="@+id/textNeighViewTac" />
+
+    <!-- TA -->
+
+    <TextView
+        android:id="@+id/textNeighViewTa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TA:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewTac"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighTaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewTa"
+        android:layout_alignTop="@+id/textNeighViewTa" />
+
+    <!-- Op -->
+
+    <TextView
+        android:id="@+id/textNeighViewOp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Operator:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewTa"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighOpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewOp"
+        android:layout_alignTop="@+id/textNeighViewOp" />
+
+    <!-- Bw -->
+
+    <TextView
+        android:id="@+id/textNeighViewBw"
+        android:text="Bandwidth:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewOp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/cellBwTextView"
+
+        />
+
+    <TextView
+        android:id="@+id/cellNeighBwTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewBw"
+        android:layout_alignTop="@+id/textNeighViewBw" />
+
+    <!-- Ear -->
+
+
+    <TextView
+        android:id="@+id/textNeighViewEar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EARFCN:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewBw"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighEarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewEar"
+        android:layout_alignTop="@+id/textNeighViewEar" />
+
+
+    <!-- CQI -->
+
+
+    <TextView
+        android:id="@+id/textNeighViewCqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CQI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewEar"
+        android:layout_toEndOf="@+id/cellBwTextView" />
+
+    <TextView
+        android:id="@+id/cellNeighCqiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewCqi"
+        android:layout_alignTop="@+id/textNeighViewCqi" />
+
+
+    <!-- CellDBM -->
+
+    <TextView
+        android:id="@+id/textNeighViewDbm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CellDBM:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewCqi"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighDbmTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewDbm"
+        android:layout_alignTop="@+id/textNeighViewDbm"
+        />
+
+
+    <!-- RSRP -->
+
+    <TextView
+        android:id="@+id/textNeighViewRsrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSRP:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewDbm"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighRsrpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewRsrp"
+        android:layout_alignTop="@+id/textNeighViewRsrp"
+        />
+
+
+    <!-- RSRQ -->
+
+    <TextView
+        android:id="@+id/textNeighViewRsrq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSRQ:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewRsrp"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighRsrqTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewRsrq"
+        android:layout_alignTop="@+id/textNeighViewRsrq"
+        />
+
+    <!-- RSSI -->
+
+
+    <TextView
+        android:id="@+id/textNeighViewRssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSI:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewRsrq"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighRssiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewRssi"
+        android:layout_alignTop="@+id/textNeighViewRssi"
+        />
+
+
+
+    <!-- RSSNR -->
+
+    <TextView
+        android:id="@+id/textNeighViewRssnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RSSNR:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewRssi"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighRssnrTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewRssnr"
+        android:layout_alignTop="@+id/textNeighViewRssnr"
+        />
+
+    <!-- Cell Status -->
+
+    <!--     <TextView
+            android:id="@+id/textNeighViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cell State:  "
+            android:layout_marginTop="1dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/textNeighViewRssnr"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/cellNeighStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/textNeighViewStatus"
+            android:layout_alignTop="@+id/textNeighViewStatus" /> -->
+
+
+
+
+
+    <!--ASU-->
+
+    <TextView
+        android:id="@+id/textNeighViewAsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASU:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewRssnr"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighAsuTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewAsu"
+        android:layout_alignTop="@+id/textNeighViewAsu"
+        />
+
+
+    <!--Level-->
+
+ <!--   <TextView
+        android:id="@+id/textNeighViewLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textNeighViewAsu"
+        android:layout_toEndOf="@+id/cellBwTextView"
+        />
+
+    <TextView
+        android:id="@+id/cellNeighLevelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textNeighViewLevel"
+        android:layout_alignTop="@+id/textNeighViewLevel"
+        />-->
+
+
+
+
+    <!-- Location -->
+
+
+
+
+
+    <!-- Latitude -->
+
+    <TextView
+        android:id="@+id/textLatStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude:  "
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textViewAsu"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellLatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textLatStatus"
+        android:layout_alignTop="@+id/textLatStatus"
+        />
+
+    <!-- Longitude -->
+
+    <TextView
+        android:id="@+id/textLongStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textLatStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellLongTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textLongStatus"
+        android:layout_alignTop="@+id/textLongStatus"
+        />
+
+    <!-- Altitude -->
+
+    <TextView
+        android:id="@+id/textAltStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Altitude:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textLongStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellAltTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textAltStatus"
+        android:layout_alignTop="@+id/textAltStatus"
+        />
+
+
+    <!-- Accuracy -->
+
+    <TextView
+        android:id="@+id/textAccStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="H Location Acc (m):  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textAltStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellAccTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textAccStatus"
+        android:layout_alignTop="@+id/textAccStatus"
+        />
+
+
+    <!-- Bearing -->
+
+    <TextView
+        android:id="@+id/textBearingStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bearing (degree):  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textAccStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellBearingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textBearingStatus"
+        android:layout_alignTop="@+id/textBearingStatus"
+        />
+
+
+
+    <!-- Bearing Acc -->
+
+    <TextView
+        android:id="@+id/textBearAccStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bearing Accuracy (degree):  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textBearingStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellBearAccTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textBearAccStatus"
+        android:layout_alignTop="@+id/textBearAccStatus"
+        />
+
+
+
+    <!-- Extra Loc -->
+
+    <TextView
+        android:id="@+id/textBundleLocStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Extra Loc Info:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textBearAccStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellBundleLocTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textBundleLocStatus"
+        android:layout_alignTop="@+id/textBundleLocStatus"
+        />
+
+
+    <!-- Time -->
+
+    <TextView
+        android:id="@+id/textTimeStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timestamp:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textBundleLocStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textTimeStatus"
+        android:layout_alignTop="@+id/textTimeStatus"
+        />
+
+
+    <!-- Time RT -->
+
+    <TextView
+        android:id="@+id/textelapsedRTStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elapsed RT:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textTimeStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellelapsedRTView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textelapsedRTStatus"
+        android:layout_alignTop="@+id/textelapsedRTStatus"
+        />
+
+
+    <!-- Time RT Nano -->
+
+    <TextView
+        android:id="@+id/textelapsedRTNanoStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elapsed RT Nano:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textelapsedRTStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellelapsedRTNanoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textelapsedRTNanoStatus"
+        android:layout_alignTop="@+id/textelapsedRTNanoStatus"
+        />
+
+
+    <!-- Speed -->
+
+
+    <TextView
+        android:id="@+id/textSpeedStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed (m/s):  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textelapsedRTNanoStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellSpeedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textSpeedStatus"
+        android:layout_alignTop="@+id/textSpeedStatus"
+        />
+
+
+    <!-- Speed Acc -->
+
+
+    <TextView
+        android:id="@+id/textSpeedAccStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speed Acc (m/s):  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textSpeedStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellSpeedAccTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textSpeedAccStatus"
+        android:layout_alignTop="@+id/textSpeedAccStatus"
+        />
+
+
+
+    <!-- Provider -->
+
+    <TextView
+        android:id="@+id/textProvderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Provider:  "
+        android:layout_marginTop="1dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_below="@+id/textSpeedAccStatus"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/cellProviderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textProvderStatus"
+        android:layout_alignTop="@+id/textProvderStatus"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text= "@string/SW_VERSION"
+        android:textStyle="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/button_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:onClick="closeApp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        style="?android:attr/buttonStyleInset"
+        />
+
+
+
+</RelativeLayout>
